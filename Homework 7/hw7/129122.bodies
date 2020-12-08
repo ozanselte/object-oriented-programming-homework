@@ -1,0 +1,9 @@
+class Polygon
+!!!135394.java!!!	area() : double
+        return areaVal;
+!!!135522.java!!!	perimeter() : double
+        return perimeterVal;
+!!!136290.java!!!	compareTo(inout shape : Shape) : int
+        if (this.area() == shape.area()) return 0;
+        else if (this.area() > shape.area()) return 1;
+        else return -1;

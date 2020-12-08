@@ -1,0 +1,2135 @@
+format 221
+"ozanselte" // 161044061_CSE241_HW7::com::ozanselte
+  revision 1
+  modified_by 98 "ozanselte"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "/home/ozanselte/IdeaProjects/161044061_CSE241_HW7/com/ozanselte/"
+  java_package "com.ozanselte"
+  classview 128354 "ozanselte"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128354 "Shape"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Shape interface for HW8
+"
+      classrelation 128610 // <realization>
+	relation 128610 -_-|>
+	  a public
+	    java "${type}<Shape>"
+	    classrelation_ref 128610 // <realization>
+	  b parent class_ref 128738 // Comparable
+      end
+
+      operation 129506 "area"
+	public explicit_return_type "double"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Area getter
+@return area
+"
+      end
+
+      operation 129634 "perimeter"
+	public explicit_return_type "double"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Perimeter getter
+@return perimeter
+"
+      end
+
+      operation 129762 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Position X and Y incrementer
+"
+      end
+
+      operation 129890 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Position X and Y decrementer
+"
+      end
+
+      operation 130018 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "JPanel drawer
+@param graphics paintComponent Graphics
+"
+      end
+    end
+
+    class 128482 "ComposedShape"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "ComposedShape class for composed shaped
+"
+      classrelation 128866 // <realization>
+	relation 128866 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128866 // <realization>
+	  b parent class_ref 128354 // Shape
+      end
+
+      classrelation 128994 // shapes (<unidirectional association>)
+	relation 128994 --->
+	  a role_name "shapes" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 128994 // shapes (<unidirectional association>)
+	  b parent class_ref 128354 // Shape
+      end
+
+      classrelation 129122 // container (<unidirectional association>)
+	relation 129122 --->
+	  a role_name "container" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129122 // container (<unidirectional association>)
+	  b parent class_ref 128354 // Shape
+      end
+
+      classrelation 129250 // small (<unidirectional association>)
+	relation 129250 --->
+	  a role_name "small" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129250 // small (<unidirectional association>)
+	  b parent class_ref 128354 // Shape
+      end
+
+      attribute 130146 "width"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130274 "height"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 132194 "ComposedShape"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "container" type class_ref 128354 // Shape
+	  param inout name "small" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor
+@param container Big shape
+@param small Small shape
+"
+      end
+
+      operation 132322 "getShapes"
+	public return_type class_ref 128354 // Shape
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Shapes array getter with container
+@return Shape array which includes small shapes and container
+"
+      end
+
+      operation 132450 "optimalFit"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Small shape fitter
+"
+      end
+
+      operation 132578 "rectangleOptimalFit"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 132706 "rectangleFit"
+	private explicit_return_type "void"
+	nparams 2
+	  param in name "width" explicit_type "double"
+	  param in name "height" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 132834 "circleOptimalFit"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 132962 "triangleOptimalFit"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133090 "triangleFit"
+	private explicit_return_type "boolean"
+	nparams 1
+	  param inout name "temp" type class_ref 128866 // Triangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133218 "isRectangleFitsContainer"
+	private explicit_return_type "boolean"
+	nparams 1
+	  param inout name "rectangle" type class_ref 128994 // Rectangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133346 "isCircleFitsContainer"
+	private explicit_return_type "boolean"
+	nparams 1
+	  param inout name "circle" type class_ref 128610 // Circle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133474 "isTriangleFitsContainer"
+	private explicit_return_type "boolean"
+	nparams 1
+	  param inout name "triangle" type class_ref 128866 // Triangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133602 "isRectanglesCompatible"
+	private explicit_return_type "boolean"
+	nparams 2
+	  param inout name "a" type class_ref 128994 // Rectangle
+	  param inout name "b" type class_ref 128994 // Rectangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133730 "isCirclesCompatible"
+	private explicit_return_type "boolean"
+	nparams 2
+	  param inout name "a" type class_ref 128610 // Circle
+	  param inout name "b" type class_ref 128610 // Circle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133858 "isTrianglesCompatible"
+	private explicit_return_type "boolean"
+	nparams 2
+	  param inout name "a" type class_ref 128866 // Triangle
+	  param inout name "b" type class_ref 128866 // Triangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133986 "isPointFitsContainer"
+	private explicit_return_type "boolean"
+	nparams 2
+	  param in name "pX" explicit_type "double"
+	  param in name "pY" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134114 "isPointFitsRectangle"
+	private explicit_return_type "boolean"
+	nparams 3
+	  param in name "pX" explicit_type "double"
+	  param in name "pY" explicit_type "double"
+	  param inout name "rectangle" type class_ref 128994 // Rectangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134242 "isPointFitsCircle"
+	private explicit_return_type "boolean"
+	nparams 3
+	  param in name "pX" explicit_type "double"
+	  param in name "pY" explicit_type "double"
+	  param inout name "circle" type class_ref 128610 // Circle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134370 "isPointFitsTriangle"
+	private explicit_return_type "boolean"
+	nparams 3
+	  param in name "pX" explicit_type "double"
+	  param in name "pY" explicit_type "double"
+	  param inout name "triangle" type class_ref 128866 // Triangle
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134498 "addShape"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134626 "area"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134754 "perimeter"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134882 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135010 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135138 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135266 "compareTo"
+	public explicit_return_type "int"
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comparator for Comparable
+Compares according to container shape
+@param shape right object
+@return comparement
+"
+      end
+    end
+
+    class 128610 "Circle"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Circular shape class
+"
+      classrelation 128738 // <realization>
+	relation 128738 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128738 // <realization>
+	  b parent class_ref 128354 // Shape
+      end
+
+      attribute 129762 "radius"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129890 "x"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130018 "y"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 130146 "Circle"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Default constructor. radius = 0
+"
+      end
+
+      operation 130274 "Circle"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "radius" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor with radius
+@param radius circle radius
+"
+      end
+
+      operation 130402 "Circle"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "radius" explicit_type "double"
+	  param in name "x" explicit_type "double"
+	  param in name "y" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Full constructor
+@param radius circle radius
+@param x center-X
+@param y center -Y
+"
+      end
+
+      operation 130530 "setRadius"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "radius" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Radius setter
+@param radius circle radius
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 130658 "setLocation"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "x" explicit_type "double"
+	  param in name "y" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Location setter
+@param x center-X
+@param y center-Y
+"
+      end
+
+      operation 130786 "setX"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "x" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Center-X setter
+@param x center-X
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 130914 "setY"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "y" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Center-Y setter
+@param y center-Y
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 131042 "getRadius"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Radius getter
+@return circle radius
+"
+      end
+
+      operation 131170 "getX"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Center-X getter
+@return center-X
+"
+      end
+
+      operation 131298 "getY"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Center-Y getter
+@return center-Y
+"
+      end
+
+      operation 131426 "area"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 131554 "perimeter"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 131682 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 131810 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 131938 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 132066 "compareTo"
+	public explicit_return_type "int"
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comparator for Comparable
+@param shape right object
+@return comparement
+"
+      end
+    end
+
+    class 128866 "Triangle"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Triangular shape class
+"
+      classrelation 130146 // <realization>
+	relation 130146 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130146 // <realization>
+	  b parent class_ref 128354 // Shape
+      end
+
+      attribute 131426 "x"
+	package explicit_type "Double"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131554 "y"
+	package explicit_type "Double"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 141410 "Triangle"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Default constructor. sideLength = 0
+"
+      end
+
+      operation 141538 "Triangle"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "sideLength" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor with a side length
+@param sideLength
+"
+      end
+
+      operation 141666 "Triangle"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "sideLength" explicit_type "double"
+	  param in name "topX" explicit_type "double"
+	  param in name "topY" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor with a side length and a top point
+@param sideLength side length
+@param topX top points X
+@param topY top points Y
+"
+      end
+
+      operation 141794 "Triangle"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "sideLength" explicit_type "double"
+	  param in name "topX" explicit_type "double"
+	  param in name "topY" explicit_type "double"
+	  param inout name "isUpsideDown" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor with a side length, a top point and rotation
+@param sideLength side length
+@param topX top points X
+@param topY top points Y
+@param isUpsideDown rotation. True if up side down.
+"
+      end
+
+      operation 141922 "setPoint"
+	public explicit_return_type "void"
+	nparams 3
+	  param in name "index" explicit_type "int"
+	  param in name "x" explicit_type "double"
+	  param in name "y" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Point position setter
+@param index point index
+@param x x coordinate
+@param y y coordinate
+"
+      end
+
+      operation 142050 "setX"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "index" explicit_type "int"
+	  param in name "x" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Point X setter
+@param index point index
+@param x x coordinate
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 142178 "setY"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "index" explicit_type "int"
+	  param in name "y" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Point Y setter
+@param index point index
+@param y y coordinate
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 142306 "getX"
+	public explicit_return_type "double"
+	nparams 1
+	  param in name "index" explicit_type "int"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Points X getter
+@param index point index
+@return x coordinate
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 142434 "getY"
+	public explicit_return_type "double"
+	nparams 1
+	  param in name "index" explicit_type "int"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Points Y getter
+@param index point index
+@return y coordinate
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 142562 "getCenterX"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Triangles center coordinates X getter
+@return centers X
+"
+      end
+
+      operation 142690 "getCenterY"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Triangles center coordinates Y getter
+@return centers Y
+"
+      end
+
+      operation 142818 "area"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142946 "perimeter"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143074 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143202 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143330 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143458 "compareTo"
+	public explicit_return_type "int"
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comparator for Comparable
+@param shape right object
+@return comparement
+"
+      end
+    end
+
+    class 128994 "Rectangle"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Rectangular shape class
+"
+      classrelation 129762 // <realization>
+	relation 129762 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129762 // <realization>
+	  b parent class_ref 128354 // Shape
+      end
+
+      attribute 130914 "width"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131042 "height"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131170 "x"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131298 "y"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 137954 "Rectangle"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Default constructor. width = 0, height = 0
+"
+      end
+
+      operation 138082 "Rectangle"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "side" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor with a side for Square
+@param side square side
+"
+      end
+
+      operation 138210 "Rectangle"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "width" explicit_type "double"
+	  param in name "height" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor with sizes
+@param width rectangle width
+@param height rectangle height
+"
+      end
+
+      operation 138338 "Rectangle"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "width" explicit_type "double"
+	  param in name "height" explicit_type "double"
+	  param in name "x" explicit_type "double"
+	  param in name "y" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Full constructor
+@param width rectangle width
+@param height rectangle height
+@param x left corner X
+@param y left corner Y
+"
+      end
+
+      operation 138466 "setSize"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "width" explicit_type "double"
+	  param in name "height" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Size setter
+@param width rectangle width
+@param height rectangle height
+"
+      end
+
+      operation 138594 "setWidth"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "width" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Width setter
+@param width rectangle width
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 138722 "setHeight"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "height" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Height setter
+@param height rectangle height
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 138850 "setLocation"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "x" explicit_type "double"
+	  param in name "y" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Location setter
+@param x left corner X
+@param y left corner X
+"
+      end
+
+      operation 138978 "setX"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "x" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Left corner X setter
+@param x left corner X
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 139106 "setY"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "y" explicit_type "double"
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Left corner Y setter
+@param y left corner Y
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 139234 "getWidth"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Width getter
+@return width
+"
+      end
+
+      operation 139362 "getHeight"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Height getter
+@return height
+"
+      end
+
+      operation 139490 "getX"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Left corner X getter
+@return eft corner X
+"
+      end
+
+      operation 139618 "getY"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Left corner Y getter
+@return eft corner Y
+"
+      end
+
+      operation 139746 "area"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 139874 "perimeter"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140002 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140130 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140258 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140386 "compareTo"
+	public explicit_return_type "int"
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comparator for Comparable
+@param shape right object
+@return comparement
+"
+      end
+    end
+
+    class 129122 "Polygon"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Polygon abstract class
+"
+      classrelation 129378 // <realization>
+	relation 129378 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129378 // <realization>
+	  b parent class_ref 128354 // Shape
+      end
+
+      attribute 130402 "perimeterVal"
+	protected explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130530 "areaVal"
+	protected explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 135394 "area"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135522 "perimeter"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135650 "getMaxX"
+	abstract public explicit_return_type "double"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Last X point getter
+@return highest X
+"
+      end
+
+      operation 135778 "getMaxY"
+	abstract public explicit_return_type "double"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Last Y point getter
+@return highest Y
+"
+      end
+
+      operation 135906 "increment"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 136034 "decrement"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 136162 "draw"
+	abstract public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 136290 "compareTo"
+	public explicit_return_type "int"
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comparator for Comparable
+@param shape right object
+@return comparement
+"
+      end
+    end
+
+    class 129250 "PolygonDyn"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Dynamic Polygon class
+"
+      classrelation 129506 // <generalisation>
+	relation 129506 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129506 // <generalisation>
+	  b parent class_ref 129122 // Polygon
+      end
+
+      attribute 130658 "points"
+	private explicit_type "Point2D.Double"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 136418 "PolygonDyn"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Polygon constructor
+@param shape object which be converted to Polygon
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 136546 "getMaxX"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 136674 "getMaxY"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 136802 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 136930 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 137058 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129378 "PolygonVect"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Polygon class which using ArrayList
+"
+      classrelation 129634 // <generalisation>
+	relation 129634 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129634 // <generalisation>
+	  b parent class_ref 129122 // Polygon
+      end
+
+      attribute 130786 "points"
+	private explicit_type "Point2D.Double"
+	init_value " new ArrayList<>()"
+	stereotype "ArrayList"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 137186 "PolygonVect"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "shape" type class_ref 128354 // Shape
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Polygon constructor
+@param shape object which be converted to Polygon
+@throws UnsupportedOperationException in case of UnsupportedOperation
+"
+      end
+
+      operation 137314 "getMaxX"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 137442 "getMaxY"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 137570 "increment"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 137698 "decrement"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "UnsupportedOperationException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 137826 "draw"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "graphics" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129506 "Selte"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "Static functions' class.
+"
+      classrelation 129890 // <generalisation>
+	relation 129890 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129890 // <generalisation>
+	  b parent class_ref 129634 // JPanel
+      end
+
+      classrelation 130018 // shapes (<unidirectional association>)
+	relation 130018 --->
+	  a role_name "shapes" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 130018 // shapes (<unidirectional association>)
+	  b parent class_ref 128354 // Shape
+      end
+
+      operation 140514 "Selte"
+	package explicit_return_type ""
+	nparams 1
+	  param inout name "shapes" type class_ref 128354 // Shape
+	multiplicity "[]"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor for JPanel extends
+@param shapes Shapes array
+"
+      end
+
+      operation 140642 "paintComponent"
+	protected explicit_return_type "void"
+	nparams 1
+	  param inout name "g" explicit_type "Graphics"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 140770 "drawAll"
+	class_operation public explicit_return_type "void"
+	nparams 2
+	  param inout name "shapes" type class_ref 128354 // Shape
+	multiplicity "[]"
+	  param in name "title" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Creates a JFrame and draws inside the shapes.
+@param shapes Shape array
+"
+      end
+
+      operation 140898 "convertAll"
+	class_operation public return_type class_ref 128354 // Shape
+	nparams 1
+	  param inout name "shapes" type class_ref 128354 // Shape
+	multiplicity "[]"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Converts Shapes to Polygon Shapes
+@param shapes Shapes array
+@return Polygon Shapes array
+"
+      end
+
+      operation 141026 "sortShapes"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "shapes" type class_ref 128354 // Shape
+	multiplicity "[]"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Shape array sorter
+@param shapes Shape array
+"
+      end
+
+      operation 141154 "getMaxX"
+	class_operation private explicit_return_type "double"
+	nparams 1
+	  param inout name "shapes" type class_ref 128354 // Shape
+	multiplicity "[]"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141282 "getMaxY"
+	class_operation private explicit_return_type "double"
+	nparams 1
+	  param inout name "shapes" type class_ref 128354 // Shape
+	multiplicity "[]"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+  end
+
+end

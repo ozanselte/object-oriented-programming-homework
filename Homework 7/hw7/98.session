@@ -1,0 +1,14 @@
+window_sizes 1920 1020 450 1464 863 88
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128226 // UML
+    1464 836 50 C 37 0
+end
+show_stereotypes
+selected class_ref 129634 // JPanel
+open
+  classview_ref 128226 // 161044061_CSE241_HW7
+  classview_ref 128354 // ozanselte
+  classview_ref 128482 // unknown
+end
+end

@@ -1,0 +1,51 @@
+class Rectangle
+!!!137954.java!!!	Rectangle()
+        this(0);
+!!!138082.java!!!	Rectangle(in side : double)
+        this(side, side);
+!!!138210.java!!!	Rectangle(in width : double, in height : double)
+        this(width, height, 0, 0);
+!!!138338.java!!!	Rectangle(in width : double, in height : double, in x : double, in y : double)
+        this.setSize(width, height);
+        this.setLocation(x, y);
+!!!138466.java!!!	setSize(in width : double, in height : double) : void
+        this.setWidth(width);
+        this.setHeight(height);
+!!!138594.java!!!	setWidth(in width : double) : void
+        if (0 > width) throw new UnsupportedOperationException("Unsupported operation!");
+        this.width = width;
+!!!138722.java!!!	setHeight(in height : double) : void
+        if (0 > height) throw new UnsupportedOperationException("Unsupported operation!");
+        this.height = height;
+!!!138850.java!!!	setLocation(in x : double, in y : double) : void
+        this.setX(x);
+        this.setY(y);
+!!!138978.java!!!	setX(in x : double) : void
+        if (0 > x) throw new UnsupportedOperationException("Unsupported operation!");
+        this.x = x;
+!!!139106.java!!!	setY(in y : double) : void
+        if (0 > y) throw new UnsupportedOperationException("Unsupported operation!");
+        this.y = y;
+!!!139234.java!!!	getWidth() : double
+        return this.width;
+!!!139362.java!!!	getHeight() : double
+        return this.height;
+!!!139490.java!!!	getX() : double
+        return this.x;
+!!!139618.java!!!	getY() : double
+        return this.y;
+!!!139746.java!!!	area() : double
+        return this.getWidth() * this.getHeight();
+!!!139874.java!!!	perimeter() : double
+        return 2 * (this.getWidth() + this.getHeight());
+!!!140002.java!!!	increment() : void
+        this.setLocation(this.getX() + 1, this.getY() + 1);
+!!!140130.java!!!	decrement() : void
+        this.setLocation(this.getX() - 1, this.getY() - 1);
+!!!140258.java!!!	draw(inout graphics : Graphics) : void
+        graphics.drawRect((int)this.getX(), (int)this.getY(),
+                (int)this.getWidth(), (int)this.getHeight());
+!!!140386.java!!!	compareTo(inout shape : Shape) : int
+        if (this.area() == shape.area()) return 0;
+        else if (this.area() > shape.area()) return 1;
+        else return -1;

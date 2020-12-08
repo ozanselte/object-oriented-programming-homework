@@ -1,0 +1,43 @@
+class Circle
+!!!130146.java!!!	Circle()
+        this(0, 0, 0);
+!!!130274.java!!!	Circle(in radius : double)
+        this(radius, radius, radius);
+!!!130402.java!!!	Circle(in radius : double, in x : double, in y : double)
+        this.setRadius(radius);
+        this.setLocation(x, y);
+!!!130530.java!!!	setRadius(in radius : double) : void
+        if (0 > radius) throw new UnsupportedOperationException("Unsupported operation!");
+        this.radius = radius;
+!!!130658.java!!!	setLocation(in x : double, in y : double) : void
+        this.setX(x);
+        this.setY(y);
+!!!130786.java!!!	setX(in x : double) : void
+        if (this.getRadius() > x) throw new UnsupportedOperationException("Unsupported operation!");
+        this.x = x;
+!!!130914.java!!!	setY(in y : double) : void
+        if (this.getRadius() > y) throw new UnsupportedOperationException("Unsupported operation!");
+        this.y = y;
+!!!131042.java!!!	getRadius() : double
+        return this.radius;
+!!!131170.java!!!	getX() : double
+        return this.x;
+!!!131298.java!!!	getY() : double
+        return this.y;
+!!!131426.java!!!	area() : double
+        return Math.PI * Math.pow(this.getRadius(), 2);
+!!!131554.java!!!	perimeter() : double
+        return 2 * Math.PI * this.getRadius();
+!!!131682.java!!!	increment() : void
+        this.setLocation(this.getX() + 1, this.getY() + 1);
+!!!131810.java!!!	decrement() : void
+        this.setLocation(this.getX() - 1, this.getY() - 1);
+!!!131938.java!!!	draw(inout graphics : Graphics) : void
+        int x = (int)(this.getX() - this.getRadius());
+        int y = (int)(this.getY() - this.getRadius());
+        graphics.drawOval(x, y,
+                (int)this.getRadius() * 2, (int)this.getRadius() * 2);
+!!!132066.java!!!	compareTo(inout shape : Shape) : int
+        if (this.area() == shape.area()) return 0;
+        else if (this.area() > shape.area()) return 1;
+        else return -1;

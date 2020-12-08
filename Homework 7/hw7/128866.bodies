@@ -1,0 +1,75 @@
+class Triangle
+!!!141410.java!!!	Triangle()
+        this(0);
+!!!141538.java!!!	Triangle(in sideLength : double)
+        this(sideLength, sideLength / 2, 0);
+!!!141666.java!!!	Triangle(in sideLength : double, in topX : double, in topY : double)
+        this(sideLength, topX, topY, false);
+!!!141794.java!!!	Triangle(in sideLength : double, in topX : double, in topY : double, inout isUpsideDown : boolean)
+        this.x = new Double[3];
+        this.y = new Double[3];
+        double height = sideLength * Math.sqrt(3) / 2;
+        setPoint(0, topX, topY);
+        if (isUpsideDown) {
+            setPoint(1, topX - sideLength / 2, topY - height);
+            setPoint(2, topX + sideLength / 2, topY - height);
+        }
+        else {
+            setPoint(1, topX - sideLength / 2, topY + height);
+            setPoint(2, topX + sideLength / 2, topY + height);
+        }
+!!!141922.java!!!	setPoint(in index : int, in x : double, in y : double) : void
+        this.setX(index, x);
+        this.setY(index, y);
+!!!142050.java!!!	setX(in index : int, in x : double) : void
+        if (3 <= index) {
+            throw new UnsupportedOperationException("Unsupported operation!");
+        }
+        if (0 > x) {
+            throw new UnsupportedOperationException("Unsupported operation!");
+        }
+        this.x[index] = x;
+!!!142178.java!!!	setY(in index : int, in y : double) : void
+        if (3 <= index) {
+            throw new UnsupportedOperationException("Unsupported operation!");
+        }
+        if (0 > y) {
+            throw new UnsupportedOperationException("Unsupported operation!" + y);
+        }
+        this.y[index] = y;
+!!!142306.java!!!	getX(in index : int) : double
+        if (3 <= index) {
+            throw new UnsupportedOperationException("Unsupported operation!");
+        }
+        return this.x[index];
+!!!142434.java!!!	getY(in index : int) : double
+        if (3 <= index) {
+            throw new UnsupportedOperationException("Unsupported operation!");
+        }
+        return this.y[index];
+!!!142562.java!!!	getCenterX() : double
+        return (getX(0) + getX(1) + getX(2)) / 3.0;
+!!!142690.java!!!	getCenterY() : double
+        return (getY(0) + getY(1) + getY(2)) / 3.0;
+!!!142818.java!!!	area() : double
+        double sideLength = Math.abs(this.getX(1) - this.getX(2));
+        return Math.pow(sideLength, 2) * Math.sqrt(3) / 4;
+!!!142946.java!!!	perimeter() : double
+        double sideLength = Math.abs(this.getX(1) - this.getX(2));
+        return Math.pow(sideLength, 2) * 3;
+!!!143074.java!!!	increment() : void
+        for (int i = 0; i < 3; i++) {
+            this.setPoint(i, this.getX(i) + 1, this.getY(i) + 1);
+        }
+!!!143202.java!!!	decrement() : void
+        for (int i = 0; i < 3; i++) {
+            this.setPoint(i, this.getX(i) - 1, this.getY(i) - 1);
+        }
+!!!143330.java!!!	draw(inout graphics : Graphics) : void
+        int x[] = {this.x[0].intValue(), this.x[1].intValue(), this.x[2].intValue()};
+        int y[] = {this.y[0].intValue(), this.y[1].intValue(), this.y[2].intValue()};
+        graphics.drawPolygon(x, y, 3);
+!!!143458.java!!!	compareTo(inout shape : Shape) : int
+        if (this.area() == shape.area()) return 0;
+        else if (this.area() > shape.area()) return 1;
+        else return -1;

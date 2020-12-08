@@ -1,0 +1,54 @@
+class Selte
+!!!140514.java!!!	Selte(inout shapes : Shape [[]])
+        this.shapes = shapes;
+!!!140642.java!!!	paintComponent(inout g : Graphics) : void
+        super.paintComponent(g);
+        for (int i = 0; i < this.shapes.length; i++) {
+            this.shapes[i].draw(g);
+        }
+!!!140770.java!!!	drawAll(inout shapes : Shape [[]], in title : String) : void
+        int maxX = (int)getMaxX(shapes);
+        int maxY = (int)getMaxY(shapes);
+        JFrame frame = new JFrame();
+        frame.pack();
+        Insets insets = frame.getInsets();
+        frame = new JFrame();
+        frame.setTitle(title);
+        frame.setSize(maxX + insets.left + insets.right, maxY + insets.top + insets.bottom);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        Selte panel = new Selte(shapes);
+        frame.add(panel);
+        frame.setVisible(true);
+        frame.setResizable(false);
+!!!140898.java!!!	convertAll(inout shapes : Shape [[]]) : Shape
+        Polygon[] polygons = new PolygonDyn[shapes.length];
+        for (int i = 0; i < shapes.length; i++) {
+            if (shapes[i].getClass().getSimpleName().equals("PolygonVect")
+             || shapes[i].getClass().getSimpleName().equals("PolygonDyn")) {
+                polygons[i] = (Polygon)shapes[i];
+            }
+            else {
+                polygons[i] = new PolygonDyn(shapes[i]);
+            }
+        }
+        return polygons;
+!!!141026.java!!!	sortShapes(inout shapes : Shape [[]]) : void
+        Arrays.sort(shapes);
+!!!141154.java!!!	getMaxX(inout shapes : Shape [[]]) : double
+        Polygon[] polygon = (PolygonDyn[]) convertAll(shapes);
+        double maxX = polygon[0].getMaxX();
+        for (int i = 1; i < polygon.length; i++) {
+            if (polygon[i].getMaxX() > maxX) {
+                maxX = polygon[i].getMaxX();
+            }
+        }
+        return maxX;
+!!!141282.java!!!	getMaxY(inout shapes : Shape [[]]) : double
+        Polygon[] polygon = (PolygonDyn[]) convertAll(shapes);
+        double maxY = polygon[0].getMaxY();
+        for (int i = 1; i < polygon.length; i++) {
+            if (polygon[i].getMaxY() > maxY) {
+                maxY = polygon[i].getMaxY();
+            }
+        }
+        return maxY;
