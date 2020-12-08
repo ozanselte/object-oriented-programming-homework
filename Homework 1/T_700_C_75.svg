@@ -1,0 +1,9 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="700" height="606" >
+<polygon points="0,606 700,606 350,0" fill="red" stroke="blue" />
+<circle cx="131" cy="530" r="75" fill="green" stroke="blue" />
+<circle cx="206" cy="400" r="75" fill="green" stroke="blue" />
+<circle cx="281" cy="270" r="75" fill="green" stroke="blue" />
+<circle cx="281" cy="530" r="75" fill="green" stroke="blue" />
+<circle cx="356" cy="400" r="75" fill="green" stroke="blue" />
+<circle cx="431" cy="530" r="75" fill="green" stroke="blue" />
+</svg>
