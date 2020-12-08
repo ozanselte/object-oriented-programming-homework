@@ -1,0 +1,86 @@
+class PolygonDyn
+!!!140130.cpp!!!	PolygonDyn(in obj : PolygonDyn)
+    size = obj.getSize();
+    a = obj.area();
+    p = obj.perimeter();
+    pointPtr = new Point2D[size];
+    for(int i = 0; i < size; i++){
+        pointPtr[i].setX(obj.getX(i));
+        pointPtr[i].setY(obj.getY(i));
+    }
+!!!140258.cpp!!!	operator =(in obj : PolygonDyn) : PolygonDyn
+    delete[] pointPtr;
+    size = obj.getSize();
+    a = obj.area();
+    p = obj.perimeter();
+    pointPtr = new Point2D[size];
+    for(int i = 0; i < size; i++){
+        pointPtr[i].setX(obj.getX(i));
+        pointPtr[i].setY(obj.getY(i));
+    }
+    return *this;
+!!!140386.cpp!!!	~PolygonDyn()
+    delete[] pointPtr;
+!!!140514.cpp!!!	PolygonDyn(in obj : Rectangle)
+    size = 4;
+    a = obj.area();
+    p = obj.perimeter();
+    pointPtr = new Point2D[size];
+    pointPtr[0] = Point2D(obj.getX(), obj.getY());
+    pointPtr[1] = Point2D(obj.getX(), obj.getY() + obj.getWidth());
+    pointPtr[2] = Point2D(obj.getX() + obj.getHeight(), obj.getY() + obj.getWidth());
+    pointPtr[3] = Point2D(obj.getX() + obj.getHeight(), obj.getY());
+!!!140642.cpp!!!	PolygonDyn(in obj : Circle)
+    size = 100;
+    a = obj.area();
+    p = obj.perimeter();
+    pointPtr = new Point2D[size];
+    for (int i = 0; i < size; ++i) {
+        pointPtr[i] = Point2D(cos(2*i*M_PI / 100) * obj.getRadius() + obj.getX(),
+                                      sin(2*i*M_PI / 100) * obj.getRadius() + obj.getY());
+    }
+!!!140770.cpp!!!	PolygonDyn(in obj : Triangle)
+    size = 3;
+    a = obj.area();
+    p = obj.perimeter();
+    pointPtr = new Point2D[size];
+    for (int i = 0; i < size; ++i) {
+        pointPtr[i] = Point2D(obj.getX(i), obj.getY(i));
+    }
+!!!141026.cpp!!!	clone() : PolygonDyn
+    PolygonDyn *copy = new PolygonDyn(*this);
+    return copy;
+!!!141154.cpp!!!	getSize() : size_t
+    return size;
+!!!141282.cpp!!!	getX(in i : int) : double
+    if(size < i){
+        throw out_of_range("Array index cannot be higher than array size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Array index cannot be lower than 0!");
+    }
+    return pointPtr[i].getX();
+!!!141410.cpp!!!	getY(in i : int) : double
+    if(size < i){
+        throw out_of_range("Array index cannot be higher than array size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Array index cannot be lower than 0!");
+    }
+    return pointPtr[i].getY();
+!!!141538.cpp!!!	setX(in i : int, in val : double) : void
+    if(size < i){
+        throw out_of_range("Array index cannot be higher than array size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Array index cannot be lower than 0!");
+    }
+    pointPtr[i].setX(val);
+!!!141666.cpp!!!	setY(in i : int, in val : double) : void
+    if(size < i){
+        throw out_of_range("Array index cannot be higher than array size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Array index cannot be lower than 0!");
+    }
+    pointPtr[i].setY(val);

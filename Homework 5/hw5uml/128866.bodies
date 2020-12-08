@@ -1,0 +1,16 @@
+class Point2D
+!!!137442.cpp!!!	Point2D()
+    setX(0);
+    setY(0);
+!!!137570.cpp!!!	Point2D(in _x : double, in _y : double)
+    setX(_x);
+    setY(_y);
+!!!137698.cpp!!!	operator =(in obj : Point2D) : Point2D
+    setX(obj.getX());
+    setY(obj.getY());
+!!!137826.cpp!!!	~Point2D()
+ /* EMPTY */
+!!!137954.cpp!!!	setX(in _x : double) : void
+    x = _x;
+!!!138082.cpp!!!	setY(in _y : double) : void
+    y = _y;

@@ -1,0 +1,71 @@
+class Rectangle
+!!!143074.cpp!!!	Rectangle()
+    setSize(0, 0);
+    setLocation(0, 0);
+!!!143202.cpp!!!	Rectangle(in w : double, in h : double)
+    setSize(w, h);
+    setLocation(0, 0);
+!!!143330.cpp!!!	Rectangle(in w : double, in h : double, in _x : double, in _y : double)
+    setSize(w, h);
+    setLocation(_x, _y);
+!!!143458.cpp!!!	setSize(in w : double, in h : double) : void
+    setWidth(w);
+    setHeight(h);
+!!!143586.cpp!!!	setWidth(in w : double) : void
+    if(0 > w){
+        throw out_of_range("Rectangle width cannot be lower than 0!");
+    }
+    width = w;
+!!!143714.cpp!!!	setHeight(in h : double) : void
+    if(0 > h){
+        throw out_of_range("Rectangle height cannot be lower than 0!");
+    }
+    height = h;
+!!!143842.cpp!!!	setLocation(in _x : double, in _y : double) : void
+    setX(_x);
+    setY(_y);
+!!!143970.cpp!!!	setX(in _x : double) : void
+    if(0 > _x){
+        throw out_of_range("Rectangle X-coordinate cannot be lower than 0!");
+    }
+    x = _x;
+!!!144098.cpp!!!	setY(in _y : double) : void
+    if(0 > _y){
+        throw out_of_range("Rectangle Y-coordinate cannot be lower than 0!");
+    }
+    y = _y;
+!!!144866.cpp!!!	area() : double
+    return width * height;
+!!!144994.cpp!!!	perimeter() : double
+    return 2 * (width + height);
+!!!145122.cpp!!!	draw(inout stream : ostream, in fill : string, in border : string) : void
+    stream <<
+           "<rect " <<
+           "width=\"" << width << "\" " <<
+           "height=\"" << height << "\" " <<
+           "x=\"" << x << "\" " <<
+           "y=\"" << y << "\" " <<
+           "fill=\"" << fill << "\" " <<
+           "stroke=\"" << border << "\" />" <<
+           endl;
+!!!145250.cpp!!!	clone() : Rectangle
+    Rectangle *copy = new Rectangle(*this);
+    return copy;
+!!!145378.cpp!!!	operator ++() : Rectangle
+    ++x;
+    ++y;
+    return *this;
+!!!145506.cpp!!!	operator --() : Rectangle
+    --x;
+    --y;
+    return *this;
+!!!145634.cpp!!!	operator ++(in  : int) : Rectangle
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    ++(*this);
+    return *dynamic_cast<Rectangle *>(tempShape);
+!!!145762.cpp!!!	operator --(in  : int) : Rectangle
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    --(*this);
+    return *dynamic_cast<Rectangle *>(tempShape);

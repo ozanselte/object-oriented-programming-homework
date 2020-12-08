@@ -1,0 +1,13 @@
+window_sizes 1920 1020 450 1464 783 168
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128354 // UML
+    1464 783 70 C 0 0
+end
+show_stereotypes
+selected 
+package_ref 129 // hw5
+open
+  class_ref 128354 // ShapeType
+end
+end

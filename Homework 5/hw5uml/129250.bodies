@@ -1,0 +1,61 @@
+class PolygonVect
+!!!141794.cpp!!!	PolygonVect(in obj : Rectangle)
+    a = obj.area();
+    p = obj.perimeter();
+    pointVector.push_back(Point2D(obj.getX(), obj.getY()));
+    pointVector.push_back(Point2D(obj.getX(), obj.getY() + obj.getWidth()));
+    pointVector.push_back(Point2D(obj.getX() + obj.getHeight(), obj.getY() + obj.getWidth()));
+    pointVector.push_back(Point2D(obj.getX() + obj.getHeight(), obj.getY()));
+!!!141922.cpp!!!	PolygonVect(in obj : Circle)
+    a = obj.area();
+    p = obj.perimeter();
+    for (int i = 0; i < 100; ++i) {
+        pointVector.push_back(Point2D(cos(2*i*M_PI / 100) * obj.getRadius() + obj.getX(),
+                            sin(2*i*M_PI / 100) * obj.getRadius() + obj.getY()));
+    }
+!!!142050.cpp!!!	PolygonVect(in obj : Triangle)
+    a = obj.area();
+    p = obj.perimeter();
+    for (int i = 0; i < 3; ++i) {
+        pointVector.push_back(Point2D(obj.getX(i), obj.getY(i)));
+    }
+!!!142178.cpp!!!	clone() : PolygonVect
+    PolygonVect *copy = new PolygonVect(*this);
+    for(int i = 0; i < getSize(); i++){
+        copy->pointVector[i] = Point2D(pointVector[i]);
+    }
+    return copy;
+!!!142306.cpp!!!	getSize() : size_t
+    return pointVector.size();
+!!!142562.cpp!!!	getX(in i : int) : double
+    if(pointVector.size() < i){
+        throw out_of_range("Vector index cannot be higher than vector size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Vector index cannot be lower than 0!");
+    }
+    return pointVector[i].getX();
+!!!142690.cpp!!!	getY(in i : int) : double
+    if(pointVector.size() < i){
+        throw out_of_range("Vector index cannot be higher than vector size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Vector index cannot be lower than 0!");
+    }
+    return pointVector[i].getY();
+!!!142818.cpp!!!	setX(in i : int, in val : double) : void
+    if(pointVector.size() < i){
+        throw out_of_range("Vector index cannot be higher than vector size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Vector index cannot be lower than 0!");
+    }
+    pointVector[i].setX(val);
+!!!142946.cpp!!!	setY(in i : int, in val : double) : void
+    if(pointVector.size() < i){
+        throw out_of_range("Vector index cannot be higher than vector size!");
+    }
+    else if(0 > i){
+        throw out_of_range("Vector index cannot be lower than 0!");
+    }
+    pointVector[i].setY(val);

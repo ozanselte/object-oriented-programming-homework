@@ -1,0 +1,58 @@
+class Circle
+!!!128098.cpp!!!	Circle()
+    setRadius(0);
+    setLocation(0, 0);
+!!!128226.cpp!!!	Circle(in r : double)
+    setRadius(r);
+    setLocation(r, r);
+!!!128354.cpp!!!	Circle(in r : double, in _x : double, in _y : double)
+    setRadius(r);
+    setLocation(_x, _y);
+!!!128482.cpp!!!	setRadius(in r : double) : void
+    if(0 > r){
+        throw out_of_range("Circle Radius cannot be lower than 0!");
+    }
+    radius = r;
+!!!128610.cpp!!!	setLocation(in _x : double, in _y : double) : void
+    setX(_x);
+    setY(_y);
+!!!128738.cpp!!!	setX(in _x : double) : void
+    if(0 > _x){
+        throw out_of_range("Circle X-coordinate cannot be lower than zero!");
+    }
+    x = _x;
+!!!128866.cpp!!!	setY(in _y : double) : void
+    if(0 > _y){
+        throw out_of_range("Circle Y-coordinate cannot be lower than zero!");
+    }
+    y = _y;
+!!!129762.cpp!!!	draw(inout stream : ostream, in fill : string, in border : string) : void
+    stream <<
+           "<circle " <<
+           "r=\"" << radius << "\" " <<
+           "cx=\"" << x << "\" " <<
+           "cy=\"" << y << "\" " <<
+           "fill=\"" << fill << "\" " <<
+           "stroke=\"" << border << "\" />" <<
+           endl;
+!!!129890.cpp!!!	clone() : Circle
+    Circle *copy = new Circle(*this);
+    return copy;
+!!!130018.cpp!!!	operator ++() : Circle
+    ++x;
+    ++y;
+    return *this;
+!!!130146.cpp!!!	operator --() : Circle
+    --x;
+    --y;
+    return *this;
+!!!130274.cpp!!!	operator ++(in  : int) : Circle
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    ++(*this);
+    return *dynamic_cast<Circle *>(tempShape);
+!!!130402.cpp!!!	operator --(in  : int) : Circle
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    --(*this);
+    return *dynamic_cast<Circle *>(tempShape);

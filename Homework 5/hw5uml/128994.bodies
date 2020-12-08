@@ -1,0 +1,30 @@
+class Polygon
+!!!138722.cpp!!!	draw(inout stream : ostream, in fill : string, in border : string) : void
+    stream << "<polygon points=\"";
+    for (int i = 0; i < getSize(); ++i) {
+        stream << getX(i) << ",";
+        stream << getY(i) << " ";
+    }
+    stream << "\" fill=\"" << fill << "\" stroke=\"" << border << "\" />" << endl;
+!!!138978.cpp!!!	operator ++() : Polygon
+    for(int i = 0; i < getSize(); i++){
+        setX(i, getX(i) + 1);
+        setY(i, getY(i) + 1);
+    }
+    return *this;
+!!!139106.cpp!!!	operator ++(in  : int) : Polygon
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    ++(*this);
+    return *dynamic_cast<Polygon *>(tempShape);
+!!!139234.cpp!!!	operator --() : Polygon
+    for(int i = 0; i < getSize(); i++){
+        setX(i, getX(i) - 1);
+        setY(i, getY(i) - 1);
+    }
+    return *this;
+!!!139362.cpp!!!	operator --(in  : int) : Polygon
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    --(*this);
+    return *dynamic_cast<Polygon *>(tempShape);

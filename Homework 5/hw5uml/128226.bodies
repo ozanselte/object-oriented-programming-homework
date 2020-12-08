@@ -1,0 +1,13 @@
+class Shape
+!!!147042.cpp!!!	operator <(in right : Shape) : bool
+    return area() < right.area();
+!!!147170.cpp!!!	operator <=(in right : Shape) : bool
+    return area() <= right.area();
+!!!147298.cpp!!!	operator >(in right : Shape) : bool
+    return area() > right.area();
+!!!147426.cpp!!!	operator >=(in right : Shape) : bool
+    return area() >= right.area();
+!!!147554.cpp!!!	operator ==(in right : Shape) : bool
+    return area() == right.area();
+!!!147682.cpp!!!	operator !=(in right : Shape) : bool
+    return area() != right.area();

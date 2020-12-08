@@ -1,0 +1,78 @@
+class Triangle
+!!!147810.cpp!!!	Triangle()
+    setTriangle(0, 0, 0, false);
+!!!147938.cpp!!!	Triangle(in sideLength : double)
+    setTriangle(sideLength, sideLength / 2.0, 0, false);
+!!!148066.cpp!!!	Triangle(in sideLength : double, in topX : double, in topY : double)
+    setTriangle(sideLength, topX, topY, false);
+!!!148194.cpp!!!	Triangle(in sideLength : double, in topX : double, in topY : double, in isUpsideDown : bool)
+    setTriangle(sideLength, topX, topY, isUpsideDown);
+!!!148322.cpp!!!	getX(in point : int) : double
+    switch (point){
+        case 0:
+            return xa;
+        case 1:
+            return xb;
+        case 2:
+            return xc;
+        default:
+            throw out_of_range("Triangle point must between zero and two!");
+    }
+!!!148450.cpp!!!	getY(in point : int) : double
+    switch (point){
+        case 0:
+            return ya;
+        case 1:
+            return yb;
+        case 2:
+            return yc;
+        default:
+            throw out_of_range("Triangle point must between zero and two!");
+    }
+!!!148578.cpp!!!	setTriangle(in sideLength : double, in topX : double, in topY : double, in isUpsideDown : bool) : void
+    if(0 > sideLength){
+        throw out_of_range("Triangle Side Length cannot be lower than zero!");
+    }
+    if(0 > topX){
+        throw out_of_range("Triangle Top X-coordinate cannot be lower than zero!");
+    }
+    if(0 > topY){
+        throw out_of_range("Triangle Top Y-coordinate cannot be lower than zero!");
+    }
+    int h = sideLength * (sqrt(3) / 2.0);
+    xa = topX;
+    ya = topY;
+    xb = topX - sideLength/2;
+    yb = topY + (isUpsideDown ? -h : h);
+    xc = topX + sideLength/2;
+    yc = topY + (isUpsideDown ? -h : h);
+!!!149090.cpp!!!	draw(inout stream : ostream, in fill : string, in border : string) : void
+    stream <<
+           "<polygon points=\"" <<
+           xa << "," << ya << " " <<
+           xb << "," << yb << " " <<
+           xc << "," << yc << "\" " <<
+           "fill=\"" << fill << "\" " <<
+           "stroke=\"" << border << "\" />" <<
+           endl;
+!!!149218.cpp!!!	clone() : Triangle
+    Triangle *copy = new Triangle(*this);
+    return copy;
+!!!149346.cpp!!!	operator ++() : Triangle
+    ++xa; ++xb; ++xc;
+    ++ya; ++yb; ++yc;
+    return *this;
+!!!149474.cpp!!!	operator --() : Triangle
+    --xa; --xb; --xc;
+    --ya; --yb; --yc;
+    return *this;
+!!!149602.cpp!!!	operator ++(in  : int) : Triangle
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    ++(*this);
+    return *dynamic_cast<Triangle *>(tempShape);
+!!!149730.cpp!!!	operator --(in  : int) : Triangle
+    delete tempShape;
+    tempShape = dynamic_cast<Shape *>(this->clone());
+    --(*this);
+    return *dynamic_cast<Triangle *>(tempShape);
